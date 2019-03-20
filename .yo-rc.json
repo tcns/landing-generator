@@ -1,0 +1,34 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "pro.cedra.landingbot"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "landingbot",
+        "packageName": "pro.cedra.landingbot",
+        "packageFolder": "pro/cedra/landingbot",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "no",
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "gradle",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "NWQxYjZlZDZiNGJmMzQ3NjBkNmM4YjExNTFiOWQ1ZDRiMTViNThlZDk5ODUxOWM1ZGUwOTBiY2Q0ZDY1OTA2MTAwNDRmM2JjN2RiZGUzZmJkYTk2ZjBmY2ExNTdkZmJmODhkZGY1MWNkYjU0OTNlZjdjNTFlOTFmZjViMDcwMTY=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}
