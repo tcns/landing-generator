@@ -1,5 +1,6 @@
 package pro.cedra.landingbot;
 
+import org.telegram.telegrambots.ApiContextInitializer;
 import pro.cedra.landingbot.config.ApplicationProperties;
 import pro.cedra.landingbot.config.DefaultProfileUtil;
 
@@ -15,6 +16,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
@@ -27,6 +30,7 @@ public class LandingbotApp {
     private static final Logger log = LoggerFactory.getLogger(LandingbotApp.class);
 
     private final Environment env;
+    public static String IMAGE_DIR;
 
     public LandingbotApp(Environment env) {
         this.env = env;
@@ -57,7 +61,9 @@ public class LandingbotApp {
      *
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        IMAGE_DIR = new File(".").getCanonicalPath() + "/sites/";
+        ApiContextInitializer.init();
         SpringApplication app = new SpringApplication(LandingbotApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();

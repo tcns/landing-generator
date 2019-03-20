@@ -102,4 +102,12 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+    cloudinary-cloud-name: cedralandingbot2000
+    cloudinary-api-key: 946149898338197
+    cloudinary-api-secret: 0ZKV3rpFSuc6D2YSNU01SHweLNE
+    cloudinary-api-url: https://api.cloudinary.com/v1_1/cedralandingbot2000
+    template-path: site-template
+    export-path: sites
+    bot-token: 661751386:AAG9AOxf6leL3cTarfMXII6h0FQXgQxAECs
+    bot-username: landing_generator_test_bot

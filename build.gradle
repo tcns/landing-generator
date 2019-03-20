@@ -212,6 +212,19 @@ dependencies {
     compile "org.springframework.security:spring-security-config"
     compile "org.springframework.security:spring-security-data"
     compile "org.springframework.security:spring-security-web"
+    compile "org.telegram:telegrambots:4.1"
+    compile "org.telegram:telegrambots-spring-boot-starter:4.1"
+    compile "org.apache.httpcomponents:httpclient:4.5.3"
+    compile "org.apache.httpcomponents:fluent-hc:4.5.3"
+    compile "org.codehaus.jackson:jackson-mapper-asl:1.9.13"
+    compile "com.vdurmont:emoji-java:3.2.0"
+    compile "com.github.igor-suhorukov:instagramscraper:2.2"
+    compile "com.vk.api:sdk:0.5.12"
+    compile "org.zeroturnaround:zt-zip:1.13"
+    compile "com.cloudinary:cloudinary-http44:1.16.0"
+    compile "org.apache.velocity:velocity:1.7"
+    compile "com.github.ajalt:colormath:1.2.0"
+    compile "io.bit3:jsass:5.5.4"
     compile "io.jsonwebtoken:jjwt-api"
     runtime "io.jsonwebtoken:jjwt-impl"
     runtime "io.jsonwebtoken:jjwt-jackson"
@@ -220,6 +233,8 @@ dependencies {
     }
     compile "io.springfox:springfox-bean-validators"
     compile "mysql:mysql-connector-java"
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
     liquibaseRuntime "mysql:mysql-connector-java"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct_version}"

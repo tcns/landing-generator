@@ -130,4 +130,6 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+    bot-token: 494951183:AAG-Dm1taB9Lk0gFzndo8ee1YdZdcXTvwrA
+    bot-username: landing_generator_bot
