@@ -10,12 +10,16 @@ import java.util.List;
 public class ColorUtil {
 
     public String getMostReadableColor (String baseColor) {
-        return getMostReadableColor(getColorFromHex(baseColor), Lists.newArrayList(
-            getColorFromHex("fff"), getColorFromHex("000"))).toString();
+        return colorToHex(getMostReadableColor(getColorFromHex(baseColor), Lists.newArrayList(
+            getColorFromHex("fff"), getColorFromHex("000"))));
     }
     public Color getMostReadableColor (Color baseColor, List<Color> colors) {
         return colors.stream().sorted((color1, color2) -> (int)(getReadability(baseColor, color2) - getReadability(baseColor, color1)))
             .findFirst().get();
+    }
+
+    public String colorToHex (Color color) {
+        return String.format("%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
     }
 
     public double getReadability(Color color1, Color color2) {
@@ -25,9 +29,9 @@ public class ColorUtil {
     }
 
     public double getLuminance(Color color) {
-        double RsRGB = color.getRed() / 255;
-        double GsRGB = color.getGreen() / 255;
-        double BsRGB = color.getBlue() / 255;
+        double RsRGB = color.getRed() / 255.0;
+        double GsRGB = color.getGreen() / 255.0;
+        double BsRGB = color.getBlue() / 255.0;
         double R,G,B;
         if (RsRGB <= 0.03928) {R = RsRGB / 12.92;} else {R = Math.pow(((RsRGB + 0.055) / 1.055), 2.4);}
         if (GsRGB <= 0.03928) {G = GsRGB / 12.92;} else {G = Math.pow(((GsRGB + 0.055) / 1.055), 2.4);}
@@ -48,8 +52,8 @@ public class ColorUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(getMostReadableColor("23be35"));
-        System.out.println(getMostReadableColor("000"));
-        System.out.println(getMostReadableColor("fff"));
+        //System.out.println(getMostReadableColor("23be35"));
+        System.out.println(getMostReadableColor("dafaff"));
+        //System.out.println(getMostReadableColor("fff"));
     }
 }

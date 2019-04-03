@@ -27,7 +27,7 @@ public enum CastMethod {
     BOOLEAN {
         @Override
         public Function<String, Object> cast() {
-            return s -> "Y".equals(s);
+            return s -> "Y".equals(s.toUpperCase());
         }
     };
     public abstract Function<String, Object> cast();

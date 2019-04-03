@@ -111,6 +111,11 @@ public class MainPage implements Serializable {
     @ManyToOne
     private ChatUser chatUser;
 
+
+    @Transient
+    @JsonInclude
+    private String readColor;
+
     @Transient
     @JsonInclude
     private List<String> gallery;

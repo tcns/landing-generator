@@ -12,6 +12,7 @@ import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zeroturnaround.zip.ZipUtil;
+import pro.cedra.landingbot.color.ColorUtil;
 import pro.cedra.landingbot.config.ApplicationProperties;
 import pro.cedra.landingbot.domain.MainPage;
 import pro.cedra.landingbot.service.scraper.ScraperService;
@@ -56,11 +57,12 @@ public class RenderService {
         if (StringUtils.isNotBlank(page.getVk())) {
             page.setGoods(vkScraper.getCatalog(page.getVk()));
         }
+        page.setReadColor(ColorUtil.getMostReadableColor(page.getColor()));
 
         velocityContext.put("page", page);
 
-        Path dirPath = DirectoryUtil.createAndGet(applicationProperties.getExportPath()+
-            "/"+page.getChatUser().getTelegramChatId()+"/"+page.getId());
+        Path dirPath = DirectoryUtil.createAndGet(applicationProperties.getExportPath() +
+            "/" + page.getChatUser().getTelegramChatId() + "/" + page.getId());
         String directory = dirPath.toAbsolutePath().toString();
 //        if (!Files.exists(Paths.get(directory+"/"+"index.html"))) {
 //            FileUtils.deleteDirectory(DirectoryUtil.getResource(applicationProperties.getTemplatePath()));
